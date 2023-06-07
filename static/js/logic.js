@@ -62,10 +62,11 @@ d3.json(queryURL).then(function (data) {
 
         // Popups that provide addtional info for earthquake Title and Depth.
         onEachFeature: function(feature, layer) {
-            layer.bindPopup( "Title:" + feature.properties.title + "<br>Depth: " + feature.geometry.coordinates[2]);
+            layer.bindPopup( "Title:" + feature.properties.title + "<br>Depth: " + feature.geometry.coordinates[2] + "<br>Magnitude:" + feature.properties.mag + "<br>Location:" + feature.properties.place);
 
         }
     }).addTo(myMap);
+
 
     let legend = L.control({postion: "bottomright"});
 
